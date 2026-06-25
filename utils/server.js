@@ -8,9 +8,9 @@ export const client=new OpenAI({
 export async function getcompletion(prompt,temperature=0){
     const response=await client.chat.completions.create({
         model:"llama-3.1-8b-instant",
-        temperature,
         messages:[{role:"user",content:prompt}]
     });
     return response.choices[0].message.content;
 }
+
 
